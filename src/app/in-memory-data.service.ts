@@ -8,25 +8,25 @@ import { Hero } from './hero';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 11, name: 'Dr Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
+      { id: 1, name: 'Dr Nice' },
+      { id: 2, name: 'Narco' },
+      { id: 3, name: 'Bombasto' },
+      { id: 4, name: 'Celeritas' },
+      { id: 5, name: 'Magneta' },
+      { id: 6, name: 'RubberMan' },
+      { id: 7, name: 'Dynama' },
+      { id: 8, name: 'Dr IQ' },
+      { id: 9, name: 'Magma' },
+      { id: 10, name: 'Tornado' }
     ];
     return {heroes};
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
-  // the method below returns the initial number (11).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
+  // Переопределяет метод genId, чтобы гарантировать, что у героя всегда есть идентификатор.
+  // Если массив героев пуст,
+  // метод ниже возвращает начальное число (1).
+  // если массив героев не пуст, метод ниже возвращает наивысший
+  // id героя + 1.
   genId(heroes: Hero[]): number {
     return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
   }
